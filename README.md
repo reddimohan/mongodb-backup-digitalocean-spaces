@@ -9,13 +9,13 @@ Create Space in DigitalOcean
 ----------------------------
 1. First thing first create a *Space* in the DigitalOcean cloud, Click [here](https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key) to know how to create *Space*.
 2. After creating a space, you will have **ACCESS_ID**, **SECRET_KEY** and **URL** (ex: https://nyc3.digitaloceanspaces.com/[space_name])
-3. Lets create a environment variables, so that we don't expose the access and secret keys in the code
+3. Let's create an environment variables so that we don't expose the access and secret keys in the code
 
 Create environment variable (Ubuntu)
 ------------------------------------
 To set a variable you can simply run `export` command in the Terminal. ex: `export ACCESS_ID=accessid_from_digitalocean`. But this is temporary and works with only the current terminal session. To set this permanently for all the future terminal sessions we need to add export command to the `~/.bashrc` file which is located in the home directory.
 
-Now lets add the all keys to the *.bashrc* file.
+Now let's add the all keys to the *.bashrc* file.
 Open *.bashrc* file and add the below lines with your own keys.
 
 `sudo -H gedit ~/.bashrc`
@@ -26,7 +26,7 @@ ACCESS_ID="your_access_id"
 SECRET_KEY="your_secret_key"
 ENDPOINT_URL="https://{}.digitaloceanspaces.com"
 ```
-In ``ENDPOINT_URL`` you notice we have add curly braces which we will be replacing in our python script.
+In ``ENDPOINT_URL`` you notice we have added curly braces which we will be replacing in our python script.
 Execute `source ~/.bashrc` command after updating the above lines to .bashrc file and now you should be able to access this from your script/terminal.
 
 #### Clone the repository to the machine where you have the MongoDB and want to take backup.
@@ -35,7 +35,7 @@ Install the required python libraries used in python scripts.
 
 Usage
 -----
-By executing the `backup.sh` shell file will take the backup based on current date and uploads to the DigitalOcean spaces.
+By executing the `backup.sh` shell file will take the backup based on the current date and uploads to the DigitalOcean spaces.
 ```sh
 sh /path/to/backup.sh school_db
 
