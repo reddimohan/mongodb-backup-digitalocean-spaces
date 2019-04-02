@@ -7,7 +7,6 @@ from pathlib import Path
 import re
 import datetime
 
-
 ACCESS_ID = os.environ['ACCESS_ID']
 SECRET_KEY = os.environ['SECRET_KEY']
 ENDPOINT_URL = os.environ['ENDPOINT_URL']
@@ -65,7 +64,7 @@ class UploadToCloud(object):
     def list_backups_in_cloud(self):
         backups = self.client.list_objects(Bucket=BUCKET_NAME)
         if 'Contents' not in backups: sys.exit("Bucket is empty.")
-        print("*** All backup files from the cloud ***\n")
+        print("*** Listing the backup files from the DigitlOcean cloud ***\n")
         for files in backups['Contents']:
             print("file {} - ({} MB) stored as {}".format(files['Key'],int(files['Size']/1024/1024) ,files['StorageClass']))
         print("\n*** End ***")
